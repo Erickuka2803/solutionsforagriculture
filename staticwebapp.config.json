@@ -1,0 +1,27 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*", "/css/*", "/js/*"]
+  },
+  "mimeTypes": {
+    ".json": "text/json"
+  },
+  "globalHeaders": {
+    "content-security-policy": "default-src 'self' https: data: blob: 'unsafe-inline' 'unsafe-eval'; script-src 'self' https: 'unsafe-inline' 'unsafe-eval'; style-src 'self' https: 'unsafe-inline'; img-src 'self' https: data: blob:; font-src 'self' https: data:; connect-src 'self' https: wss: blob:; media-src 'self' https: data: blob:; object-src 'none'; frame-ancestors 'self';",
+    "cache-control": "no-cache",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=(self), interest-cohort=()"
+  },
+  "routes": [
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200,
+      "headers": {
+        "Cache-Control": "no-store"
+      }
+    }
+  ]
+}
